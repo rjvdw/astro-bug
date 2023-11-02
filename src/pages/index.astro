@@ -1,0 +1,45 @@
+---
+const data = [{ text: 'row #1' }, { text: 'row #2' }, { text: 'row #3' }]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table>
+        <tr>
+          <th>text</th>
+        </tr>
+
+        {
+          data.map((row) => (
+            <tr>
+              <td>{row.text}</td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
+
+    <p>I live outside the wrapper.</p>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    font-family: sans-serif;
+  }
+
+  .wrapper {
+    background: #cec;
+    padding: 1rem;
+    border: 1px solid #393;
+  }
+</style>
